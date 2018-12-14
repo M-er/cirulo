@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="inicioApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href=" ">
+  <title>Circulo - Fitness Template</title>
+  <!-- Bootstrap core CSS -->
+  <link href="./assets/vendor/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="./assets/css/inicio.css" rel="stylesheet">
+  <!-- Generic CSS -->
+  <link href="./assets/css/util.css" rel="stylesheet">
+  <!-- AngularMaterial CSS-->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+</head>
+<body>
+  <div class="header">
+    <a href="#" id="menu-action" class="pt-1 ">
+      <ion-icon size="large" name="menu"></ion-icon>
+      <span>Close</span>
+    </a>
+    <div class="logo">
+      Admin Panel
+    </div>
+  </div>
+  <div class="sidebar">
+    <ul>
+      <li><a href="#"><ion-icon size="large" name="desktop"></ion-icon></a></li>
+      <li><a href="#"><ion-icon size="large" name="wifi"></ion-icon></a></li>
+      <li><a href="#"><ion-icon size="large" name="calendar"></ion-icon></a></li>
+      <li><a href="#"><ion-icon size="large" name="mail"></ion-icon></a></li>
+      <li><a href="#"><ion-icon size="large" name="grid"></ion-icon></a></li>
+    </ul>
+  </div>
+  <!-- Content -->
+  <div class="main">
+    <div ng-controller="inicioCtrl" ng-cloak>
+      <md-tabs md-stretch-tabs   >
+        <md-tab md-on-select="cambio('aranceles')">
+          <md-tab-label>
+            Consulta de aranceles
+          </md-tab-label>
+        </md-tab>
+        <md-tab md-on-select="cambio('liquidaciones')">
+          <md-tab-label>
+            Consulta de liquidaciones
+          </md-tab-label>
+        </md-tab>
+        <md-tab md-on-select="cambio('remitos')">
+          <md-tab-label>
+            Consulta de remitos
+          </md-tab-label>
+        </md-tab>
+
+
+        <!-- <md-tab>  <a href="/aranceles">Vista de aranceles</a> </md-tab>
+        <md-tab>  <a href="/liquidaciones">Vista de liquidaciones</a> </md-tab>
+        <md-tab>  <a href="/remitos">Vista de remitos</a> </md-tab> -->
+      </md-tabs>
+      <md-content id="content" class="md-padding"  ng-view flex></md-content>
+    </div>
+  </div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="./assets/vendor/js/jquery.min.js" ></script>
+  <script src="./assets/vendor/js/bootstrap.min.js"></script>
+  <script src="./assets/vendor/js/wow.min.js"></script>
+  <!-- UtilJS -->
+  <script src="./assets/js/index.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="./assets/vendor/js/popper.min.js"></script>
+  <!-- Ionicon JavaScript -->
+  <script src="https://unpkg.com/ionicons@4.3.0/dist/ionicons.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+  <!-- Angular Material Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
+  <!-- MainAPP -->
+  <script src="./app/inicio.js"></script>
+</body>
+</html>

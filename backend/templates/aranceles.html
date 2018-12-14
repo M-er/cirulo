@@ -1,0 +1,106 @@
+<h1 class="md-display-2">Aranceles</h1>
+<div  class="col" layout="column" ng-cloak>
+  <h4>Ingrese la obra social</h4>
+  <div ng-init="loadAll()">
+    <md-content class="md-padding">
+      <form ng-submit="$event.preventDefault()">
+        <md-autocomplete ng-disabled="isDisabled"
+        md-no-cache="noCache"
+        md-selected-item="selectedUser"
+        md-search-text-change="searchTextChange(searchText)"
+        md-search-text="searchText"
+        md-selected-item-change="selectedItemChange(item)"
+        md-items="item in querySearch(searchText)"
+        md-item-text="item.value ? item.value + ' - ' + item.nroDoc+' - ' +item.concepto: ''"
+        md-min-length="4" placeholder="Ej. OSDE, SIMEPA"
+        >
+        <md-item-template>
+          <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.value}} - {{item.nroDoc}} - {{item.concepto}} - {{item.bienAsegurado}}</span>
+        </md-item-template>
+        <md-not-found>
+          No hubo resultados de "{{searchText}}" en el sistema.
+          Estará algo mal tipiado ?
+          {{item.concepto}}
+        </md-not-found>
+      </md-autocomplete>
+    </form>
+  </md-content>
+  <div class="col">
+    <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">
+            Información
+          </span>
+          <span class="md-subhead">
+            SIMEPA
+          </span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-content layout="column" layout-align="end center">
+        <md-content flex layout-padding>Factura C , cuit 30-52194360-9, Domicilio: AVENIDA SAN MARTIN Nº 655      - null IVA: undefined</md-content>
+      </md-card-content>
+      <md-card-content layout="row" layout-align="end center">
+        <md-content flex layout-padding>
+          Normas de Trabajo: S / D
+        </md-content>
+        <md-content flex layout-padding>
+          Códigos: S / D
+        </md-content>
+      </md-card-content>
+      <md-card-content layout="row" layout-align="end center">
+        <md-content flex layout-padding>
+          Prestaciones: S / D
+        </md-content>
+        <md-content flex layout-padding>
+          Aranceles: S / D
+        </md-content>
+      </md-card-content>
+      <md-card-content layout="column" layout-align="start">
+        <div class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="container">
+                <table class="table table-striped">
+                  <tr>
+                    <th width="50%">Codigo</th>
+                    <th width="50%">Descripcion</th>
+                  </tr>
+                  <!-- <tr ng-repeat="alumno in alumnos | orderBy:'-creado'"> -->
+                  <tr>
+                    <td>Codigo</td>
+                    <td>Descripcion</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </md-card-content>
+    </md-card>
+  </div>
+  <!-- <div ng-show="selectedUser" class="col">
+  <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+  <md-card-title>
+  <md-card-title-text>
+  <span class="md-headline">
+  {{selectedUser.nroDoc}} - {{selectedUser.concepto}}
+</span>
+<span class="md-subhead">
+Bien asegurado: {{selectedUser.bienAsegurado}}
+</span>
+</md-card-title-text>
+</md-card-title>
+<md-card-content layout="row" layout-align="end center">
+<md-content flex layout-padding>
+Póliza: {{selectedUser.value}}
+</md-content>
+<md-content flex layout-padding>
+Compañia: {{selectedUser.ciaTxt}}
+</md-content>
+</md-card-content>
+</md-card>
+</div> -->
+</div>
+
+</div>
